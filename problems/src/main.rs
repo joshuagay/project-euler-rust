@@ -1,10 +1,12 @@
 use std::io;
+use std::cmp::Ordering;
 
 fn main() {
     println!("This is Josh's Project Euler in Rust program");
+    let choice = 0;
 
     loop {		   
-        println!("Enter the number of the problem you wold like to run:");
+        println!("Enter 0 to exit or the number of the problem you wold like to run:");
 
         let mut eulerproblem = String::new();
 
@@ -15,8 +17,15 @@ fn main() {
             Ok(num) => num,
 	    Err(_) => continue,
         };
-    }
+        match eulerproblem.cmp(&choice) {
+            Ordering::Greater => {
+                println!("Running: {}", eulerproblem);
+                println!("...");	
+            },
+            Ordering::Less   => println!("Too small"),
+            Ordering::Equal    => break,
+            
+        }
 
-    println!("Running: {}", eulerproblem);
-    println!("...");	
+    }
 }

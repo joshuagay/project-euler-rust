@@ -3,7 +3,8 @@ use std::cmp::Ordering;
 
 fn main() {
     println!("This is Josh's Project Euler in Rust program");
-    let choice = 0;
+    const CHOICE: u32 = 0;
+
 
     loop {		   
         println!("Enter 0 to exit or the number of the problem you wold like to run:");
@@ -17,7 +18,7 @@ fn main() {
             Ok(num) => num,
 	    Err(_) => continue,
         };
-        match eulerproblem.cmp(&choice) {
+        match eulerproblem.cmp(&CHOICE) {
             Ordering::Greater => {
                 println!("Running: {}", eulerproblem);
                 println!("...");	

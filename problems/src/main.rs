@@ -9,6 +9,10 @@ fn main() {
     io::stdin().read_line(&mut eulerproblem)
         .expect("Failed to read line");
 
+    let guess: u32 = eulerproblem.trim().parse()
+        .expect("Please type a number!");
+
+
     println!("Running: {}", eulerproblem);
     println!("...");	
 }

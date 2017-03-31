@@ -18,14 +18,14 @@ fn main() {
             Ok(num) => num,
 	    Err(_) => continue,
         };
+
         match eulerproblem.cmp(&CHOICE) {
             Ordering::Greater => {
                 println!("Running: {}", eulerproblem);
                 println!("...");	
             },
             Ordering::Less   => println!("Too small"),
-            Ordering::Equal    => break,
-            
+            Ordering::Equal    => break,            
         }
 
     }

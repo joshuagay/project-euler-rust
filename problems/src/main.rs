@@ -1,5 +1,6 @@
 use std::io;
 use std::cmp::Ordering;
+mod e1;
 
 fn main() {
     println!("This is Josh's Project Euler in Rust program");
@@ -22,7 +23,7 @@ fn main() {
         match eulerproblem.cmp(&CHOICE) {
             Ordering::Greater => {
                 println!("Running: {}", eulerproblem);
-                println!("...");	
+                println!("E1 sez: {}", e1::e1());
             },
             Ordering::Less   => println!("Too small"),
             Ordering::Equal    => break,            
@@ -30,3 +31,4 @@ fn main() {
 
     }
 }
+
